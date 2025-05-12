@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Özür Dilerim</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6e6;
+    }
+
+    h2 {
+      color: #cc0000;
+    }
+
+    #button-container {
+      position: relative;
+      height: 200px;
+    }
+
+    #evet {
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    #hayir {
+      position: absolute;
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Seni kırdığım için özür dilerim 🙁</h2>
+  <p>Yüzüm olmadığı için buton koydum buraya... Cevabını seç.</p>
+  <div id="button-container">
+    <button id="evet" onclick="cevap()">Evet</button>
+    <button id="hayir">Hayır</button>
+  </div>
+
+  <script>
+    const hayir = document.getElementById("hayir");
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 150);
+      hayir.style.left = x + "px";
+      hayir.style.top = y + "px";
+    }
+
+    setInterval(moveButton, 500);
+
+    function cevap() {
+      document.body.innerHTML = `
+        <h1 style="color: #cc0066;">Cevabının 'Evet' olduğunu biliyordum! ❤️</h1>
+        <p style="font-size: 20px;">Seni çok ama çok seviyorum.</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
